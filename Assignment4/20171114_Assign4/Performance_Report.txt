@@ -1,0 +1,37 @@
+For n = 10^5:
+
+    Megresort_normal:
+
+    real    0m0.009s
+    user    0m0.004s
+    sys     0m0.000s
+
+    Megresort_concurrent:
+
+    real    0m0.200s
+    user    0m0.004s
+    sys     0m0.000s
+
+    Megresort_concurrent_threads:
+
+    real    0m0.384s
+    user    0m0.032s
+    sys     0m1.304s
+
+
+
+Using Forks:
+    1. Mergesort has been implemented by creating two child processes from parent process recurcively.
+    2. shmget is used to get memory block which can be accessed by the parent and all their children processes.
+    3. shmat is used to assign it to a pointer variable.
+    4. As they are different processes chance of deadlock is reduced.
+    5. Each recursive Mergesort is considered as a different process.
+
+
+Using Threads:
+    1. Mergesort has been implemented by creating a main thread and then creating separate threads for each recursive call.
+    2. As threads of the main process have access of shared memory, therefore shmat,shmget like commands are not required.
+    3. These threads are joined at last using thread_join.
+    4. We can say threads are faster than processes as they are LWP.
+
+BOTH THESE METHODS ARE SLOWER THAN NORMAL MERGESORT AS IT IS OPTIMISED BY OS ITSELF,WHICH HAS A BETTER ALGORITHM THAN THESE NAIVE ALGORITHMS.    
