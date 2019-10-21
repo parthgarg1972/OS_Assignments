@@ -40,7 +40,7 @@ INITIALIZING FUNCTIONS FOR VOTERS,EVM,BOOTH:
 MAIN FLOW:
 ----------
 
-+ It initializes,creates thread and joins Booth threads.
++ It initializes new threads, creates thread and joins Booth threads.
 
 BOOTH THREAD:
 -------------
