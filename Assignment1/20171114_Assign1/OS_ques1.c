@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
 				{
 					ch1[j]-=32;
 				}
-				else if(ch1[j]>=65 && ch1[j]<=90)
+				else if(ch1[j]>64 && ch1[j]<91)
 				{
 					ch1[j]+=32;
 				}
